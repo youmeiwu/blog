@@ -1,5 +1,9 @@
 <%= simple_form_for @post do |f| %>
   <%= f.input :title %>
   <%= f.input :body %>
-  <%= f.submit "Create Post", data: { disable_with: "Submitting..." } %>
+  <% if @post.present? %>
+    <%= f.submit "Update Post", data: { disable_with: "Submitting..." } %>
+  <% else %>
+    <%= f.submit "Create Post", data: { disable_with: "Submitting..." } %>
+  <% end %>
 <% end %>
