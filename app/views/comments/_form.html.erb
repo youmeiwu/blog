@@ -1,5 +1,5 @@
-<%= simple_form_for @post do |f| %>
-  <%= f.input :title %>
+<%= simple_form_for [@post, @post.comments.build] do |f| %>
+  <%= f.input :name %>
   <%= f.input :body %>
   <%= f.submit data: { disable_with: "Submitting..." } %>
 <% end %>
